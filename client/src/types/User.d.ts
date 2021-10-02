@@ -1,7 +1,7 @@
 export interface User {
   id: number,
   name: string,
-  online_status: string, // enum
+  online_status: OnlineStatus
   is_plus: boolean,
   picture: {
     comment: string,
@@ -9,3 +9,5 @@ export interface User {
   },
   last_login: string
 }
+
+type OnlineStatus = 'ONLINE' | 'OFFLINE' | 'DATE'
