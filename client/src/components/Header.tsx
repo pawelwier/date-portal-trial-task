@@ -2,15 +2,15 @@ import React from 'react'
 import {SortingType} from "../types/SortingType";
 
 type HeaderProps = {
-  setSortingType: any
+  setSortingType: React.Dispatch<React.SetStateAction<SortingType>>
 }
 
 function Header({setSortingType}: HeaderProps) {
   const switchSortingType = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSortingType(e.target?.value)
+    setSortingType(e.target?.value as SortingType)
   }
 
-  const SORTING_OPTIONS = [
+  const SORTING_OPTIONS: {title: string, value: SortingType}[] = [
     {
       title: 'Activity',
       value: 'ACTIVITY',
@@ -22,13 +22,20 @@ function Header({setSortingType}: HeaderProps) {
   ]
 
   return (
-    <div>
-      Header
-      <select onChange={switchSortingType}>
-        {SORTING_OPTIONS.map((option, i) => (
-          <option value={option.value} key={i}>{option.title}</option>
-          ))}
-      </select>
+    <div className="header-container">
+      <div>
+        PLANET ROMEO
+      </div>
+      <div className="results-select">
+        <span>
+          Sort results by:
+        </span>
+        <select onChange={switchSortingType}>
+          {SORTING_OPTIONS.map((option, i) => (
+            <option value={option.value} key={i}>{option.title}</option>
+            ))}
+        </select>
+      </div>
     </div>
   )
 }

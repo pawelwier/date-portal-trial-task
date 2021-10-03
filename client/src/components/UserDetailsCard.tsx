@@ -19,7 +19,7 @@ function UserDetailsCard({id}: UserDetailsProps) {
 
   return (
     <div>
-      <div className="personal-info-header">
+      <div>
         {userData?.headline}
       </div>
       <div>

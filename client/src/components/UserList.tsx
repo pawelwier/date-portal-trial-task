@@ -5,28 +5,26 @@ import UserCard from "./UserCard";
 import {SortingType} from "../types/SortingType";
 
 type UserListProps = {
-  sortingType: SortingType
+  sortingType: SortingType,
+  resultLimit: number,
 }
 
-const PAGE_LIMIT = 20
-
-function UserList({sortingType}: UserListProps) {
+function UserList({sortingType, resultLimit}: UserListProps) {
   const [users, setUsers] = useState<User[]>([]);
-  const [limit, setLimit] = useState<number>(PAGE_LIMIT);
   const [recordCount, setRecordCount] = useState<number>(0);
 
   useEffect(() => {
     const getUsers = async () => {
-      const userResponse = await getAllUsers(limit, sortingType)
+      const userResponse = await getAllUsers(resultLimit, sortingType)
       setUsers(userResponse.items)
       setRecordCount(userResponse.total)
     }
     getUsers()
-  }, [limit, sortingType])
+  }, [resultLimit, sortingType])
 
   return (
     <>
-      <div className="result-count">{recordCount} results found</div>
+      <div className="header">{recordCount} results found</div>
       <div className="user-list">
         {users.map((user, i) => (
           <UserCard {...user} key={i} />

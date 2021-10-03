@@ -5,15 +5,56 @@
 .user-profile-img {
     width: 200px;
 }
-.result-count,
-.personal-info-header {
+.header {
     font-size: 20px;
     font-weight: 700;
 }
 .user-list {
-    display: flex;
+    display: grid;
     gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 .user-card {
-    width: 250px;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    gap: 5px;
+}
+.result-limit-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+.user-name-status {
+    display: flex;
+    gap: 10px;
+    font-weight: 700;
+}
+.header-container {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 16px;
+    gap: 50px;
+}
+.results-select {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+select:focus {
+    outline: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+select {
+    font-size: 18px;
 }

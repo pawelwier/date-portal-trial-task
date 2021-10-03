@@ -4,6 +4,8 @@ import {User} from "../types/User"
 import OnlineStatusIcon from "./OnlineStatusIcon"
 import UserDetailsCard from "./UserDetailsCard"
 
+const DEFAULT_PROFILE_IMG_URL = 'https://i.picsum.photos/id/659/200/200.jpg?hmac=kFpdD3XTBGwPUAH1tD-AiWigstjIX8WGIcyySuVQIvE'
+
 function UserCard(user: User) {
   const [showDetails, setShowDetails] = useState<boolean>(false);
   const [buttonText, setButtonText] = useState<string>('Show more');
@@ -23,10 +25,12 @@ function UserCard(user: User) {
 
   return (
     <div className="user-card">
-      <img className='user-profile-img' src={user.picture?.url} />
-      {user.name}
-      {`${getTimeDistance(user.last_login)} ago`}
-      <OnlineStatusIcon status={user.online_status} />
+      <div className="user-name-status">
+        {user.name}
+        <OnlineStatusIcon status={user.online_status} />
+      </div>
+      <img className='user-profile-img' src={user.picture?.url || DEFAULT_PROFILE_IMG_URL} alt={user.name} />
+      {`Last login: ${getTimeDistance(user.last_login)} ago`}
       <button onClick={toggleShowMore}>{buttonText}</button>
       {showDetails ? <UserDetailsCard id={user.id}/> : null}
     </div>
