@@ -2,11 +2,7 @@ import React from 'react'
 import {UserSexualDetails} from "../../types/UserSexualDetails";
 import {analPosition, isSm, saferSex} from "../../data/SexualData";
 
-type SexualDetailsProps = {
-  sexual: UserSexualDetails
-}
-
-function LocationDetails({sexual}: SexualDetailsProps) {
+function LocationDetails(sexual: UserSexualDetails) {
   const {
     anal_position,
     safer_sex,

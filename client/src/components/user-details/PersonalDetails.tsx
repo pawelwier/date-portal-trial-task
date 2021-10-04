@@ -2,11 +2,7 @@ import React from 'react'
 import {UserPersonalDetails} from '../../types/UserPersonalDetails';
 import {bodyHair, bodyType, isSmoker, userEthnicity, userRelationship} from '../../data/PersonalData';
 
-type PersonalDetailsProps = {
-  personal: UserPersonalDetails
-}
-
-function LocationDetails({personal}: PersonalDetailsProps) {
+function LocationDetails(personal: UserPersonalDetails) {
   const {
     age,
     body_hair,

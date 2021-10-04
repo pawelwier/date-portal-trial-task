@@ -1,11 +1,7 @@
 import React from 'react'
 import {UserLocationDetails} from "../../types/UserLocationDetails";
 
-type LocationDetailsProps = {
-  location: UserLocationDetails
-}
-
-function LocationDetails({location}: LocationDetailsProps) {
+function LocationDetails(location: UserLocationDetails) {
   const {
     city,
     country,

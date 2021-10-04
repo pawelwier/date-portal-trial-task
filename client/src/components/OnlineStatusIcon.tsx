@@ -1,11 +1,7 @@
 import React from 'react'
 import {OnlineStatus} from '../types/User';
 
-type OnlineStatusIconProps = {
-  status: OnlineStatus
-}
-
-function OnlineStatusIcon({status}: OnlineStatusIconProps) {
+function OnlineStatusIcon({status}: {status: OnlineStatus}) {
   const getStatusIcon = () => {
     const greenDotUrl = 'https://miro.medium.com/max/512/1*nZ9VwHTLxAfNCuCjYAkajg.png'
     const redDotUrl = 'https://pngpress.com/wp-content/uploads/2020/08/uploads_dot_dot_PNG44.png'

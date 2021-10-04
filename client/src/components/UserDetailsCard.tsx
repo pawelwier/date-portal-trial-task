@@ -26,9 +26,9 @@ function UserDetailsCard({id}: UserDetailsProps) {
         <div className="details-header">
           {userData.headline}
         </div>
-        <LocationDetails location={userData.location} />
-        <PersonalDetails personal={userData.personal} />
-        <SexualDetails sexual={userData.sexual} />
+        <LocationDetails {...userData.location} />
+        <PersonalDetails {...userData.personal} />
+        <SexualDetails {...userData.sexual} />
       </div>
       : null
   )
