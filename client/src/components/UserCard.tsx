@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import {formatDistance} from 'date-fns'
-import {User} from "../types/User"
-import OnlineStatusIcon from "./OnlineStatusIcon"
-import UserDetailsCard from "./UserDetailsCard"
+import {User} from '../types/User'
+import OnlineStatusIcon from './OnlineStatusIcon'
+import UserDetailsCard from './UserDetailsCard'
 
 const DEFAULT_PROFILE_IMG_URL = 'https://i.picsum.photos/id/659/200/200.jpg?hmac=kFpdD3XTBGwPUAH1tD-AiWigstjIX8WGIcyySuVQIvE'
 
@@ -31,7 +31,7 @@ function UserCard(user: User) {
       </div>
       <img className='user-profile-img' src={user.picture?.url || DEFAULT_PROFILE_IMG_URL} alt={user.name} />
       {`Last login: ${getTimeDistance(user.last_login)} ago`}
-      <button onClick={toggleShowMore}>{buttonText}</button>
+      <button className="show-details-button btn" onClick={toggleShowMore}>{buttonText}</button>
       {showDetails ? <UserDetailsCard id={user.id}/> : null}
     </div>
   )

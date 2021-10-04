@@ -13,7 +13,7 @@ function ResultLimitButton({resultLimit, setResultLimit}: ResultLimitButtonProps
 
   return (
     <div className='result-limit-container'>
-      <button onClick={showMoreResults}>More results</button>
+      <button className="more-results-button btn" onClick={showMoreResults}>More results</button>
     </div>
   )
 }
