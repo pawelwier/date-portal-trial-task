@@ -17,7 +17,7 @@ function LocationDetails({sexual}: SexualDetailsProps) {
     <>
       <div className="user-details">
         <div className="details-header">
-          {'Personal:'}
+          {'Sexual:'}
         </div>
         <div>
           {`anal position: ${analPosition[anal_position]}, 

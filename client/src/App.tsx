@@ -6,9 +6,10 @@ import {SortingType} from "./types/SortingType";
 import ResultLimitButton from "./components/ResultLimitButton";
 
 const RESULT_LIMIT = 8
+const SORTING_TYPE = 'ACTIVITY'
 
 function App() {
-  const [sortingType, setSortingType] = useState<SortingType>('ACTIVITY')
+  const [sortingType, setSortingType] = useState<SortingType>(SORTING_TYPE)
   const [resultLimit, setResultLimit] = useState<number>(RESULT_LIMIT)
 
   return (

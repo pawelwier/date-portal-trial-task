@@ -89,11 +89,17 @@
     color: white;
     background-color: #cfcf61;
 }
+.header-logo {
+    cursor: pointer;
+}
+select {
+    padding: 4px 10px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
 select:focus {
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-}
-select {
-    font-size: 18px;
 }

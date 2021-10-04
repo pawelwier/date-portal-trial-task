@@ -10,6 +10,10 @@ function Header({setSortingType}: HeaderProps) {
     setSortingType(e.target?.value as SortingType)
   }
 
+  const refreshPage = () => {
+    window.location.reload()
+  }
+
   const SORTING_OPTIONS: {title: string, value: SortingType}[] = [
     {
       title: 'Activity',
@@ -23,7 +27,7 @@ function Header({setSortingType}: HeaderProps) {
 
   return (
     <div className="header-container">
-      <div>
+      <div className="header-logo" onClick={refreshPage}>
         PLANET ROMEO
       </div>
       <div className="results-select">
