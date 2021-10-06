@@ -1,5 +1,6 @@
 import React from 'react'
-import {SortingType} from "../types/SortingType";
+import {SortingType} from '../types/SortingType'
+import DetailDisplayModeSwitch from './DetailDisplayModeSwitch'
 
 type HeaderProps = {
   setSortingType: React.Dispatch<React.SetStateAction<SortingType>>
@@ -40,6 +41,7 @@ function Header({setSortingType}: HeaderProps) {
             ))}
         </select>
       </div>
+      <DetailDisplayModeSwitch />
     </div>
   )
 }
