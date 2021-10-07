@@ -1,6 +1,6 @@
 import React from 'react'
-import {useStore} from '../store/user'
-import {DetailDisplayMode} from "../types/UserStoreState";
+import {useStore} from '../../store/user'
+import {DetailDisplayMode} from '../../types/UserStoreState'
 
 function DetailDisplayModeSwitch () {
   const setMode = useStore(state => state.setDetailDisplayMode)

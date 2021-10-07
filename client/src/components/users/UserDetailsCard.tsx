@@ -1,15 +1,11 @@
 import React, {useEffect, useState} from 'react'
-import {getUserDetails} from '../controllers/UserController'
-import {UserDetails} from '../types/UserDetails'
-import LocationDetails from "./user-details/LocationDetails";
-import PersonalDetails from "./user-details/PersonalDetails";
-import SexualDetails from "./user-details/SexualDetails";
+import {getUserDetails} from '../../controllers/UserController'
+import {UserDetails} from '../../types/UserDetails'
+import LocationDetails from '../user-details/LocationDetails'
+import PersonalDetails from '../user-details/PersonalDetails'
+import SexualDetails from '../user-details/SexualDetails'
 
-type UserDetailsProps = {
-  id: number
-}
-
-function UserDetailsCard({id}: UserDetailsProps) {
+function UserDetailsCard({id}: {id: number}) {
   const [userData, setUserData] = useState<UserDetails | null>(null)
 
   useEffect(() => {

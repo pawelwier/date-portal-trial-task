@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import {formatDistance} from 'date-fns'
-import {User} from '../types/User'
+import {User} from '../../types/User'
 import OnlineStatusIcon from './OnlineStatusIcon'
 import UserDetailsCard from './UserDetailsCard'
-import {useStore} from '../store/user'
+import {useStore} from '../../store/user'
 
 const DEFAULT_PROFILE_IMG_URL = 'https://i.picsum.photos/id/659/200/200.jpg?hmac=kFpdD3XTBGwPUAH1tD-AiWigstjIX8WGIcyySuVQIvE'
 
@@ -12,6 +12,8 @@ function UserCard(user: User) {
   const [buttonText, setButtonText] = useState<string>('Show more');
 
   const mode = useStore(state => state.detailDisplayMode)
+  const setUserId = useStore(state => state.setSelectedUser)
+  const toggleDetailPopup = useStore(state => state.toggleDetailPopup)
 
   const getTimeDistance = (date: string) => {
     return formatDistance(
@@ -20,8 +22,13 @@ function UserCard(user: User) {
     )
   }
 
+  const setSelectedUserId = () => {
+    setUserId(user.id)
+    toggleDetailPopup()
+  }
+
   const toggleShowMore = () => {
-    mode === 'CARD' ? setShowDetails(!showDetails) : console.log('POPUP')
+    mode === 'CARD' ? setShowDetails(!showDetails) : setSelectedUserId()
   }
 
   useEffect(() => {

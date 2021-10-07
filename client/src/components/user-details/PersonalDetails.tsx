@@ -1,6 +1,6 @@
 import React from 'react'
-import {UserPersonalDetails} from '../../types/UserPersonalDetails';
-import {bodyHair, bodyType, isSmoker, userEthnicity, userRelationship} from '../../data/PersonalData';
+import {UserPersonalDetails} from '../../types/UserPersonalDetails'
+import {bodyHair, bodyType, isSmoker, userEthnicity, userRelationship} from '../../data/PersonalData'
 
 function LocationDetails(personal: UserPersonalDetails) {
   const {

@@ -1,12 +1,10 @@
-import {UserDetails} from "./UserDetails";
-
 export type DetailDisplayMode = 'CARD' | 'POPUP'
 
 export interface UserStoreState {
   showDetailPopup: boolean
-  selectedUserDetails: UserDetails | null
+  selectedUserId: number
   detailDisplayMode: DetailDisplayMode
-  toggleShowDetailPopup: () => void
-  setSelectedUser: (selectedUserDetails: UserDetails) => void
+  toggleDetailPopup: () => void
+  setSelectedUser: (selectedUserId: number) => void
   setDetailDisplayMode: (mode: DetailDisplayMode) => void
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import {OnlineStatus} from '../types/User';
+import {OnlineStatus} from '../../types/User'
 
 function OnlineStatusIcon({status}: {status: OnlineStatus}) {
   const getStatusIcon = () => {

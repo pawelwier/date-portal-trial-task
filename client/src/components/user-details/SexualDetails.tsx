@@ -1,6 +1,6 @@
 import React from 'react'
-import {UserSexualDetails} from "../../types/UserSexualDetails";
-import {analPosition, isSm, saferSex} from "../../data/SexualData";
+import {UserSexualDetails} from '../../types/UserSexualDetails'
+import {analPosition, isSm, saferSex} from '../../data/SexualData'
 
 function LocationDetails(sexual: UserSexualDetails) {
   const {

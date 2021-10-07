@@ -1,12 +1,11 @@
 import create from 'zustand'
-import {UserDetails} from '../types/UserDetails'
 import {DetailDisplayMode, UserStoreState} from '../types/UserStoreState'
 
 export const useStore = create<UserStoreState>(set => ({
   showDetailPopup: false,
-  selectedUserDetails: null,
+  selectedUserId: 0,
   detailDisplayMode: 'CARD',
-  toggleShowDetailPopup: () => set((state) => ({showDetailPopup: !state.showDetailPopup})),
-  setSelectedUser: (selectedUserDetails: UserDetails) => set({selectedUserDetails}),
+  toggleDetailPopup: () => set((state) => ({showDetailPopup: !state.showDetailPopup})),
+  setSelectedUser: (selectedUserId: number) => set({selectedUserId}),
   setDetailDisplayMode: (detailDisplayMode: DetailDisplayMode) => set({detailDisplayMode}),
 }))

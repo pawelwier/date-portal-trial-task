@@ -8,7 +8,6 @@ type ResultLimitButtonProps = {
 function ResultLimitButton({resultLimit, setResultLimit}: ResultLimitButtonProps) {
   const showMoreResults = () => {
     setResultLimit(resultLimit + 8)
-    console.log(resultLimit + 8)
   }
 
   return (

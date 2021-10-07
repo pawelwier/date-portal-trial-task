@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
-import {getAllUsers} from '../controllers/UserController'
-import {User} from "../types/User";
-import UserCard from "./UserCard";
-import {SortingType} from "../types/SortingType";
+import {getAllUsers} from '../../controllers/UserController'
+import {User} from '../../types/User'
+import UserCard from './UserCard'
+import {SortingType} from '../../types/SortingType'
 
 type UserListProps = {
   sortingType: SortingType,

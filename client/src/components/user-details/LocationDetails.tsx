@@ -1,5 +1,5 @@
 import React from 'react'
-import {UserLocationDetails} from "../../types/UserLocationDetails";
+import {UserLocationDetails} from '../../types/UserLocationDetails'
 
 function LocationDetails(location: UserLocationDetails) {
   const {
