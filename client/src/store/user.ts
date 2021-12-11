@@ -3,9 +3,9 @@ import {DetailDisplayMode, UserStoreState} from '../types/UserStoreState'
 
 export const useStore = create<UserStoreState>(set => ({
   showDetailPopup: false,
-  selectedUserId: 0,
+  selectedUserData: {selectedUserId: 0, selectedUserName: '', selectedUserImg: ''},
   detailDisplayMode: 'CARD',
   toggleDetailPopup: () => set((state) => ({showDetailPopup: !state.showDetailPopup})),
-  setSelectedUser: (selectedUserId: number) => set({selectedUserId}),
+  setSelectedUser: (selectedUserData: {selectedUserId: number, selectedUserName: '', selectedUserImg: string}) => set({selectedUserData}),
   setDetailDisplayMode: (detailDisplayMode: DetailDisplayMode) => set({detailDisplayMode}),
 }))

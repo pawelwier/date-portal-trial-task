@@ -10,6 +10,7 @@ const DEFAULT_PROFILE_IMG_URL = 'https://i.picsum.photos/id/659/200/200.jpg?hmac
 function UserCard(user: User) {
   const [showDetails, setShowDetails] = useState<boolean>(false);
   const [buttonText, setButtonText] = useState<string>('Show more');
+  const [userImgSrc, setUserImgSrc] = useState<string>(DEFAULT_PROFILE_IMG_URL);
 
   const mode = useStore(state => state.detailDisplayMode)
   const setUserId = useStore(state => state.setSelectedUser)
@@ -22,18 +23,27 @@ function UserCard(user: User) {
     )
   }
 
-  const setSelectedUserId = () => {
-    setUserId(user.id)
+  const setSelectedUserData = () => {
+    setUserId({
+      selectedUserId: user.id,
+      selectedUserName: user.name,
+      selectedUserImg: userImgSrc
+    })
     toggleDetailPopup()
   }
 
   const toggleShowMore = () => {
-    mode === 'CARD' ? setShowDetails(!showDetails) : setSelectedUserId()
+    mode === 'CARD' ? setShowDetails(!showDetails) : setSelectedUserData()
   }
 
   useEffect(() => {
     setButtonText(showDetails ? 'Show less' : 'Show more')
   }, [showDetails])
+
+  useEffect(() => {
+    const url = user.picture?.url
+    if (url) setUserImgSrc(url)
+  }, [user.picture?.url])
 
   return (
     <div className="user-card">
@@ -41,9 +51,9 @@ function UserCard(user: User) {
         {user.name}
         <OnlineStatusIcon status={user.online_status} />
       </div>
-      <img className='user-profile-img' src={user.picture?.url || DEFAULT_PROFILE_IMG_URL} alt={user.name} />
+      <img className='user-profile-img' src={userImgSrc} alt={user.name} />
       {`Last login: ${getTimeDistance(user.last_login)} ago`}
-      <button className="show-details-button btn" onClick={toggleShowMore}>{buttonText}</button>
+      <button className="main-button btn" onClick={toggleShowMore}>{buttonText}</button>
       {showDetails && <UserDetailsCard id={user.id}/>}
     </div>
   )

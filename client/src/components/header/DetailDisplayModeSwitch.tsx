@@ -2,7 +2,8 @@ import React from 'react'
 import {useStore} from '../../store/user'
 import {DetailDisplayMode} from '../../types/UserStoreState'
 
-function DetailDisplayModeSwitch () {
+function DetailDisplayModeSwitch() {
+  const mode = useStore(state => state.detailDisplayMode)
   const setMode = useStore(state => state.setDetailDisplayMode)
 
   const selectMode = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,10 +24,10 @@ function DetailDisplayModeSwitch () {
   return (
     <div className="display-switch-container">
       <div>Detail display:</div>
-      <div onChange={selectMode}>
+      <div>
         {DISPLAY_DETAIL_OPTIONS.map((option, i) => (
           <span key={i}>
-            <input type="radio" id={option.id} name="displayModeSelect" value={option.id} />
+            <input type="radio" id={option.id} name="displayModeSelect" value={option.id} checked={option.id === mode} onChange={selectMode} />
             <label className="mode-detail-label" htmlFor={option.id}>{option.label}</label>
           </span>
         ))}
