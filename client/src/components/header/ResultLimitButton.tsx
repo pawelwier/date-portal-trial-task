@@ -5,14 +5,19 @@ type ResultLimitButtonProps = {
   setResultLimit: React.Dispatch<React.SetStateAction<number>>
 }
 
-function ResultLimitButton({resultLimit, setResultLimit}: ResultLimitButtonProps) {
+function ResultLimitButton({
+  resultLimit,
+  setResultLimit,
+}: ResultLimitButtonProps) {
   const showMoreResults = () => {
     setResultLimit(resultLimit + 8)
   }
 
   return (
-    <div className='result-limit-container'>
-      <button className="more-results-button btn" onClick={showMoreResults}>More results</button>
+    <div className="result-limit-container">
+      <button className="more-results-button btn" onClick={showMoreResults}>
+        More results
+      </button>
     </div>
   )
 }

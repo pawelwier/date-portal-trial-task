@@ -1,4 +1,4 @@
-import {AnalPosition, SaferSex, Sm} from './Sexual';
+import { AnalPosition, SaferSex, Sm } from './Sexual'
 
 export interface UserSexualDetails {
   anal_position: AnalPosition

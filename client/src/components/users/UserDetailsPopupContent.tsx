@@ -1,9 +1,17 @@
-import React, {useEffect, useState} from 'react'
-import {getUserDetails} from '../../controllers/UserController'
-import {UserDetails} from "../../types/UserDetails";
-import UserDetailsCard from "./UserDetailsCard";
+import React, { useEffect, useState } from 'react'
+import { getUserDetails } from '../../controllers/UserController'
+import { UserDetails } from '../../types/UserDetails'
+import UserDetailsCard from './UserDetailsCard'
 
-function UserDetailsPopupContent({id, userName, userImg}: {id: number, userName: string, userImg: string}) {
+function UserDetailsPopupContent({
+  id,
+  userName,
+  userImg,
+}: {
+  id: number
+  userName: string
+  userImg: string
+}) {
   const [userData, setUserData] = useState<UserDetails | null>(null)
 
   useEffect(() => {
@@ -16,15 +24,15 @@ function UserDetailsPopupContent({id, userName, userImg}: {id: number, userName:
 
   return (
     <div>
-      {userData &&
+      {userData && (
         <div>
           <h2 className="user-popup-name">{userName}</h2>
           <div className="user-popup-img-wrapper">
-            <img className="user-popup-img" alt='user img' src={userImg} />
+            <img className="user-popup-img" alt="user img" src={userImg} />
           </div>
-          <UserDetailsCard id={userData.id}/>
+          <UserDetailsCard id={userData.id} />
         </div>
-      }
+      )}
     </div>
   )
 }

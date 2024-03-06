@@ -1,4 +1,10 @@
-import {BodyHair, BodyType, Ethnicity, Relationship, Smoker} from "../types/Personal";
+import {
+  BodyHair,
+  BodyType,
+  Ethnicity,
+  Relationship,
+  Smoker,
+} from '../types/Personal'
 
 export const bodyHair: Record<BodyHair, string> = {
   SMOOTH: 'smooth',
@@ -19,7 +25,7 @@ export const bodyType: Record<BodyType, string> = {
   NOENTRY: '-',
 }
 
-export const userEthnicity: Record<Ethnicity, string> =  {
+export const userEthnicity: Record<Ethnicity, string> = {
   MIXED: 'mixed',
   CAUCASIAN: 'Caucasian',
   LATIN: 'Latin',

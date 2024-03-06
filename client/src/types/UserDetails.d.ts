@@ -1,6 +1,6 @@
-import {UserLocationDetails} from './UserLocationDetails';
-import {UserPersonalDetails} from './UserPersonalDetails';
-import {UserSexualDetails} from './UserSexualDetails';
+import { UserLocationDetails } from './UserLocationDetails'
+import { UserPersonalDetails } from './UserPersonalDetails'
+import { UserSexualDetails } from './UserSexualDetails'
 
 export interface UserDetails {
   headline: string

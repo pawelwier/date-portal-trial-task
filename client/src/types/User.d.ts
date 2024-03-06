@@ -1,12 +1,12 @@
 export interface User {
-  id: number,
-  name: string,
+  id: number
+  name: string
   online_status: OnlineStatus
-  is_plus: boolean,
+  is_plus: boolean
   picture: {
-    comment: string,
-    url: string,
-  },
+    comment: string
+    url: string
+  }
   last_login: string
 }
 

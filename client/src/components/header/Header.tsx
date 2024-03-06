@@ -1,10 +1,13 @@
 import React from 'react'
-import {SortingType} from '../../types/SortingType'
+import { SortingType } from '../../types/SortingType'
 import DetailDisplayModeSwitch from './DetailDisplayModeSwitch'
 import SortResultsSwitch from './SortResultsSwitch'
 
-function Header({setSortingType}: {setSortingType: React.Dispatch<React.SetStateAction<SortingType>>}) {
-
+function Header({
+  setSortingType,
+}: {
+  setSortingType: React.Dispatch<React.SetStateAction<SortingType>>
+}) {
   const refreshPage = () => {
     window.location.reload()
   }
@@ -20,4 +23,4 @@ function Header({setSortingType}: {setSortingType: React.Dispatch<React.SetState
   )
 }
 
-export default Header;
+export default Header

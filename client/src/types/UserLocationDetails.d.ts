@@ -4,5 +4,4 @@ export interface UserLocationDetails {
   country: string
   distance: number
   name: string
-
 }

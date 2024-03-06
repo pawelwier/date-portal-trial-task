@@ -1,4 +1,4 @@
-import {AnalPosition, SaferSex, Sm} from "../types/Sexual";
+import { AnalPosition, SaferSex, Sm } from '../types/Sexual'
 
 export const analPosition: Record<AnalPosition, string> = {
   TOP_ONLY: 'top only',

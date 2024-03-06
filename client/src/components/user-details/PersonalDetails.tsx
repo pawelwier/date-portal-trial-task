@@ -1,6 +1,12 @@
 import React from 'react'
-import {UserPersonalDetails} from '../../types/UserPersonalDetails'
-import {bodyHair, bodyType, isSmoker, userEthnicity, userRelationship} from '../../data/PersonalData'
+import { UserPersonalDetails } from '../../types/UserPersonalDetails'
+import {
+  bodyHair,
+  bodyType,
+  isSmoker,
+  userEthnicity,
+  userRelationship,
+} from '../../data/PersonalData'
 
 function LocationDetails(personal: UserPersonalDetails) {
   const {
@@ -17,9 +23,7 @@ function LocationDetails(personal: UserPersonalDetails) {
   return (
     <>
       <div className="user-details">
-        <div className="details-header">
-          {'Personal:'}
-        </div>
+        <div className="details-header">'Personal:</div>
         <div>
           {`age: ${age}, 
           height: ${height.cm}cm, 
@@ -35,4 +39,4 @@ function LocationDetails(personal: UserPersonalDetails) {
   )
 }
 
-export default LocationDetails;
+export default LocationDetails
