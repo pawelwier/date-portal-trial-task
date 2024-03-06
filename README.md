@@ -26,6 +26,12 @@ Users are very important on PLANETROMEO. That's why we want you to implement an 
 3. `npm start`
 4. The API is available on [http://localhost:3000](http://localhost:3000)
 
+## Client
+1. Go to `/client`
+2. Create a `.env` file (copy `.env.defaults` data)
+3. `npm install`
+4. `npm start`
+
 ## API description
 ### `GET /api/search?length=32`
 ### `GET /api/search?length=32&sorting=[DISTANCE|ACTIVITY]`
